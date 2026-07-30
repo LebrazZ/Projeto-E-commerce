@@ -12,86 +12,49 @@
 </head>
 <body>
     
-    <header>
+    <header class="header">
 
         <div class="logo">
-            <h1>TechStore</h1>
+            <a href="index.html">TechStore</a>
         </div>
 
-        <nav>
+       <div class="search-box">
+            <input type="text" placeholder="Pesquisar produtos...">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+       </div>
+
+       <nav class="menu">
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Favoritos</a></li>
-                <li><a href="#">Carrinho</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Contato</a></li>
             </ul>
-        </nav>
+       </nav>
+       
+       <div class="acoes">
+        
+            <a href="favoritos.html">
+                <i class="fa-regular fa-heart"></i>
+            </a>
 
-    </header>
+            <a href="carrinho.html" class="carrinho">
+                
+                <i class="fa-solid fa-cart-shopping"></i>
 
-    <section class="banner">
-        <div class="banner - text">
+                <span id="contadorCarrinho">0</span>
 
-            <h2>Tecnoogia ao seu alcance.</h2>
+            </a>
 
-            <p>
-                Encontre notebooks, celulares, periféricos e muitos mais
-                com qualidade e os melhores preços.
-            </p>
+            <a href="login.html">
+                <i class="fa-regular fa-user"></i>
+            </a>
 
-            <button>Ver Produtos</button>
-
-        </div>
-
-    </section>
-
-    <section class="categorias">
-
-        <h2>Categorias</h2>
-
-        <div class="cards-categorias">
-
-            <div class="categoria">
-                💻
-                <h3>Notebooks</h3>
-            </div>
-
-            <div class="categoria">
-                📱
-                <h3>Smartphones</h3>
-            </div>
-
-            <div class="categoria">
-                🎮
-                <h3>Games</h3>
-            </div>
-
-            <div class="categoria">
-                🎧
-                <h3>Acessórios</h3>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="produtos">
-
-        <h2>Produtos em Destaque</h2>
-
-        <div class="lista-produtos">
-
-        </div>
-
-    </section>
-
-    <footer>
-
-        <p>@ 2026 TechStore - Todos os direitos reservados.</p>
-
-    </footer>
-
+       </div>
+       
+    </header>   
     <script src="app.js"></script>
 </body>
 </html>
