@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' ,sans-serif;
+}
+
+body{
+    background: #f5f5f5;
+    color: #111827;
+}
+
+header{
+    background: 2563EB;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 8%;
+}
+
+.logo h1{
+    font-size: 30px;
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    transition: 3s;
+}
+
+nav a:hover{
+    color: #dbeafe;
+}
+
+.banner{
+    height: 500px;
+    
+    display: flex;
+    align-items: center;
+
+    padding: 0 8%;
+
+    background: linear-gradient(135deg,#2563EB, #111827);
+
+    color: white;
+}
+
+.banner-text{
+    max-width: 600px;
+}
+
+.banner h2{
+    font: size 55px;
+    margin-bottom: 20px;
+}
+.banner p{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.banner button{
+    background: #22C55E;
+    
+    color: white;
+    
+    border: none;
+
+    padding: 15px 35px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: .3s;
+
+}
+
+.banner button:hover{
+    transform:scale(1.05);
+}
+
+.categorias{
+
+    padding: 70px 8%;
+
+}
+
+.categorias h2{
+
+    text-align: grid;
+
+}
+
+.cards-categorias{
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 25px;
+
+}
+
+.categoria{
+
+    background: white;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+
+    font-size: 40px;
+
+}
+
+.categoria h3{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+}
+
+.produtos{
+
+    padding:70px 8%;
+
+}
+
+.produtos h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.lista-produtos{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    text-align:center;
+
+}
+
+.card img{
+
+    width:100%;
+
+    height:200px;
+
+    object-fit:contain;
+
+}
+
+.card h3{
+
+    margin:15px 0;
+
+}
+
+.preco{
+
+    color:#2563EB;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+.card button{
+
+    margin-top:15px;
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    background:#2563EB;
+
+    color:white;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+footer{
+
+    margin-top:60px;
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+}
