@@ -296,3 +296,75 @@ footer {
     text-align: center;
     padding: 25px;
 }
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+
+    background:#ef4444;
+    color:white;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+    font-weight:600;
+}
+
+.avaliacao{
+    color:#f59e0b;
+    margin:10px 0;
+}
+
+.acoes-card{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.comprar{
+    flex:1;
+
+    background:#2563EB;
+    color:white;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.comprar:hover{
+    background:#1d4ed8;
+}
+
+.favorito{
+    width:50px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#f3f4f6;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.favorito:hover{
+    background:#fee2e2;
+}
+
+.card{
+    position:relative;
+}

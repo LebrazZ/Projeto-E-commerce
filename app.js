@@ -25,24 +25,43 @@ const produtos = [
     }
 ];
 
-const lista = document.querySelector(".lista-produtos");
+const listaProdutos = document.getElementById("listaProdutos");
 
-produtos.forEach(produto=>{
+function criarEstrelas(quantidade) {
+    return "⭐".repeat(quantidade);
+}
 
-    lista.innerHTML += `
+produtos.forEach(produto =>{
+    
+    listaProdutos.innerHTML += `
         <div class="card">
+
+            ${produto.promocao ? '<span class="badge">Oferta</span>' : ""}
 
             <img src="${produto.imagem}" alt="${produto.nome}">
 
             <h3>${produto.nome}</h3>
 
+            <div class="avaliacao">
+                ${criarEstrelas(produto.avaliacao)}
+            </div>
+
             <p class="preco">
-                R$ ${produto.preco.toFixed(2)}
+                R$ ${produto.preco.toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2
+                })}
             </p>
 
-            <button>Comprar</button>
+            <div class="acoes-card">
+                <button class="comprar">
+                    Comprar
+                </button>
+
+                <button class="favorito">
+                    ❤️
+                </button>
+            </div>
 
         </div>
     `;
-
 });
