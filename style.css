@@ -1025,3 +1025,46 @@ footer {
     text-decoration: underline;
 
 }
+
+/* ===========================
+   ÁREA DO USUÁRIO
+=========================== */
+
+#areaUsuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+
+#areaUsuario span {
+    color: white;
+    font-weight: 500;
+}
+
+
+#areaUsuario a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+#areaUsuario button {
+    background: white;
+    color: #2563EB;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+#areaUsuario button:hover {
+
+    background: #e5e7eb;
+
+}
