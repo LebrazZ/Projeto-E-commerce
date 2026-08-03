@@ -29,34 +29,77 @@
             </button>
        </div>
 
-       <nav class="menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="produto.html">Produtos</a></li>
-                <li><a href="#">Promoções</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-       </nav>
+    <nav class="menu">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Início
+                </a>
+            </li>
+
+            <li>
+                <a href="produtos.html">
+                 Produtos
+                </a>
+            </li>
+
+            <li>
+                <a href="promocoes.html">
+                    Promoções
+                </a>
+            </li>
+
+            <li>
+                <a href="contato.html">
+                    Contato
+                </a>
+            </li>
+
+            <li>
+                <a href="carrinho.html">
+                    🛒 <span id="contadorCarrinho">0</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="favoritos.html">
+                    ❤️ Favoritos
+                </a>
+            </li>
+
+            <li id="areaUsuario">
+
+                <a href="login.html">
+                    👤 Login
+            </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
        
-       <div class="acoes">
+    <div class="acoes">
         
-            <a href="favoritos.html">
-                <i class="fa-regular fa-heart"></i>
-            </a>
+        <a href="favoritos.html">
+            <i class="fa-regular fa-heart"></i>
+        </a>
 
-            <a href="carrinho.html" class="carrinho">
+        <a href="carrinho.html" class="carrinho">
                 
-                <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
 
-                <span id="contadorCarrinho">0</span>
+            <span id="contadorCarrinho">0</span>
 
-            </a>
+        </a>
 
-            <a href="login.html">
+        <a href="login.html">
                 <i class="fa-regular fa-user"></i>
-            </a>
+        </a>
 
-       </div>
+    </div>
 
     </header>  
     
@@ -73,15 +116,38 @@
                 com qualidades, garantia e os melhores preços.
             </p>
 
-            <a href="produto.html" class="btn-banner">
+            <a href="produtos.html" class="btn-banner">
                 Comprar Agora
             </a>
 
         </div>
 
-        <div class="banner-img">
+         <div class="hero-image">
+            <img src="img/notebook.png">
+        </div>
 
-            <img src="img/notebook.png" alt="Notebook Gamer">
+    </section>
+
+    <section class="categorias">
+
+        <h2>Comprar por categoria</h2>
+
+        <div class="cards-categorias">
+
+            <div class="categoria">
+                💻
+                <h3>Notebooks</h3>
+            </div>
+
+            <div class="categoria">
+                📱
+                <h3>Smartphones</h3>
+            </div>
+
+            <div class="categoria">
+                🎮
+                <h3>Gamer</h3>
+            </div>
 
         </div>
 
@@ -99,8 +165,10 @@
         </div>
 
     </section>
-    
+
     <script src="app.js"></script>
+    <script src="usuario.js"></script>
+    <script src="contador.js"></script>
 
 </body>
 </html>

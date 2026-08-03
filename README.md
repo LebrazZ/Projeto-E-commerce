@@ -33,7 +33,6 @@ Projeto-E-commerce/
 │
 ├── index.html
 ├── produtos.html
-├── produto.html
 ├── carrinho.html
 ├── login.html
 ├── cadastro.html

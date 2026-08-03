@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pagamento | TechStore</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="logo">
+        <a href="index.html">
+            TechStore
+        </a>
+    </div>
+
+
+    <nav class="menu">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Início
+                </a>
+            </li>
+
+
+            <li>
+                <a href="produtos.html">
+                    Produtos
+                </a>
+            </li>
+
+
+            <li>
+                <a href="carrinho.html">
+                    🛒 Carrinho
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+</header>
+
+
+
+<section class="produtos">
+
+
+<div class="titulo-secao">
+
+<h2>
+Finalizar Compra 💳
+</h2>
+
+<p>
+Preencha seus dados e escolha a melhor forma de pagamento.
+</p>
+
+</div>
+
+
+
+<div class="checkout-container">
+
+
+
+<div class="resumo-pedido">
+
+
+<p>Produtos selecionados:</p>
+
+<div id="listaResumo"></div>
+
+<div class="linha-resumo">
+    <span>Subtotal</span>
+    <strong id="Subtotal">R$ 0,00</strong>
+</div>
+
+<div class="linha-resumo">
+    <span>Frete</span>
+    <strong>Grátis</strong>
+</div>
+
+<div id="linha-resumo total">
+    <span>Total</span>
+    <strong id="total">R$ 0,00</strong>
+</div>
+
+<div class="linha-resumo">
+
+<span>
+Frete
+</span>
+
+<strong>
+Grátis
+</strong>
+
+</div>
+
+
+<div class="linha-resumo total">
+
+<span>
+Total
+</span>
+
+<strong>
+R$ 0,00
+</strong>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="formulario-pagamento">
+
+
+<h3>
+👤 Dados do comprador
+</h3>
+
+
+<label>
+Nome completo
+</label>
+
+<input 
+type="text" 
+id="nome" 
+placeholder="Digite seu nome">
+
+
+
+
+
+<label>
+Email
+</label>
+
+<input 
+type="email" 
+id="email" 
+placeholder="Digite seu email">
+
+
+
+
+
+<label>
+Endereço de entrega
+</label>
+
+<input 
+type="text" 
+placeholder="Rua, número, bairro">
+
+
+
+
+
+<label>
+Forma de pagamento
+</label>
+
+
+<select id="pagamento">
+
+
+<option>
+Pix
+</option>
+
+
+<option>
+Cartão de Crédito
+</option>
+
+
+<option>
+Boleto
+</option>
+
+
+</select>
+
+
+
+
+<button onclick="finalizarPedido()" class="comprar">
+
+Confirmar pedido ✅
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="seguranca">
+
+🔒 Compra segura | Seus dados estão protegidos pela TechStore
+
+</div>
+
+
+
+</section>
+
+
+
+<script src="pagamento.js"></script>
+<script src="contador.js"></script>
+
+</body>
+
+</html>

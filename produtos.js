@@ -34,51 +34,205 @@ const produtos = [
 ];
 
 const lista = document.getElementById("listaProdutos");
+const pesquisa = document.getElementById("pesquisa");
 
-function criarEstrelas(qtd){
-    return "⭐".repeat(qtd);
+
+// ===============================
+// CARRINHO
+// ===============================
+
+function adicionarCarrinho(id){
+
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+
+    let produto = produtos.find(
+        item => item.id === id
+    );
+
+
+    let existe = carrinho.find(
+        item => item.id === id
+    );
+
+
+    if(existe){
+
+        existe.quantidade++;
+
+    }else{
+
+        carrinho.push({
+
+            id: produto.id,
+            nome: produto.nome,
+            preco: produto.preco,
+            imagem: produto.imagem,
+            quantidade:1
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "carrinho",
+        JSON.stringify(carrinho)
+    );
+
+
+    alert("Produto adicionado ao carrinho 🛒");
+
 }
 
-function mostrarProdutos(listaProdutos){
+// ===============================
+// FAVORITOS
+// ===============================
+
+function adicionarFavorito(id){
+
+    let favoritos = JSON.parse(
+        localStorage.getItem("favoritos")
+    ) || [];
+
+
+    let produto = produtos.find(
+        item => item.id === id
+    );
+
+
+    let existe = favoritos.find(
+        item => item.id === id
+    );
+
+
+    if(!existe){
+
+        favoritos.push(produto);
+
+
+        localStorage.setItem(
+            "favoritos",
+            JSON.stringify(favoritos)
+        );
+
+
+        alert("Produto adicionado aos favoritos ❤️");
+
+    }else{
+
+        alert("Esse produto já está nos favoritos!");
+
+    }
+
+}
+
+// ===============================
+// ESTRELAS
+// ===============================
+
+function criarEstrelas(qtd){
+
+    return "⭐".repeat(qtd);
+
+}
+
+
+
+// ===============================
+// MOSTRAR PRODUTOS
+// ===============================
+
+function mostrarProdutos(produtosMostrar){
 
     lista.innerHTML = "";
 
-    listaProdutos.forEach(produto=>{
+
+    produtosMostrar.forEach(produto => {
+
 
         lista.innerHTML += `
-            <div class="card">
 
-                ${produto.promocao ? '<span class="badge">Oferta</span>' : ""}
+        <div class="card">
 
-                <img src="${produto.imagem}" alt="${produto.nome}">
 
-                <h3>${produto.nome}</h3>
+            ${produto.promocao ? 
+            '<span class="badge">Oferta</span>' : ''}
 
-                <div class="avaliacao">
-                    ${criarEstrelas(produto.avaliacao)}
-                </div>
 
-                <p class="preco">
-                    R$ ${produto.preco.toLocaleString("pt-BR",{
-                        minimumFractionDigits:2
-                    })}
-                </p>
+            <img src="${produto.imagem}" 
+            alt="${produto.nome}">
 
-                <div class="acoes-card">
-                    <button class="comprar">
-                        Comprar
-                    </button>
 
-                    <button class="favorito">
-                        ❤️
-                    </button>
-                </div>
+            <h3>${produto.nome}</h3>
+
+
+            <div class="avaliacao">
+
+                ${criarEstrelas(produto.avaliacao)}
 
             </div>
+
+
+            <p class="preco">
+
+                R$ ${produto.preco.toLocaleString("pt-BR", {
+                    minimumFractionDigits:2
+                })}
+
+            </p>
+
+
+
+            <button 
+            class="comprar"
+            onclick="adicionarCarrinho(${produto.id})">
+
+            Comprar 🛒
+
+            </button>
+
+            <button 
+            class="favorito"
+            onclick="adicionarFavorito(${produto.id})">
+
+            ❤️
+
+            </button>
+
+        </div>
+
         `;
+
 
     });
 
 }
 
+// mostra todos ao abrir a página
 mostrarProdutos(produtos);
+
+
+
+// ===============================
+// PESQUISA
+// ===============================
+
+pesquisa.addEventListener("input", function(){
+
+
+    const texto = pesquisa.value.toLowerCase();
+
+
+    const resultado = produtos.filter(produto =>
+
+
+        produto.nome.toLowerCase().includes(texto)
+
+    );
+
+
+    mostrarProdutos(resultado);
+
+
+});
