@@ -221,3 +221,50 @@ function atualizarContadorCarrinho() {
 }
 
 atualizarContadorCarrinho();
+
+function verificarUsuario(){
+
+    let areaUsuario = document.getElementById("areaUsuario");
+
+    if(!areaUsuario){
+        return;
+    }
+
+
+    let logado = localStorage.getItem("logado");
+    let nome = localStorage.getItem("nomeUsuario");
+
+
+    if(logado === "true"){
+
+        areaUsuario.innerHTML = `
+            <span>Olá, ${nome} 👋</span>
+            <button onclick="sair()">Sair</button>
+        `;
+
+    } else {
+
+        areaUsuario.innerHTML = `
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastrar</a>
+        `;
+
+    }
+
+}
+
+
+function sair(){
+
+    localStorage.removeItem("logado");
+    localStorage.removeItem("nomeUsuario");
+    localStorage.removeItem("usuarioAtual");
+
+    alert("Você saiu da conta!");
+
+    window.location.href = "index.html";
+
+}
+
+
+verificarUsuario();

@@ -3,21 +3,36 @@ function login(){
     let email = document.getElementById("email").value;
     let senha = document.getElementById("senha").value;
 
-    let usuario = JSON.parse(localStorage.getItem("usuario"));
 
-    if(!usuario){
-        alert("Usuário não encontrado. Faça seu cadastro!");
-        return;
-    }
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    if(email === usuario.email && senha === usuario.senha){
+
+    let usuarioEncontrado = usuarios.find(
+        usuario => usuario.email === email && usuario.senha === senha
+    );
+
+
+    if(usuarioEncontrado){
 
         localStorage.setItem("logado", "true");
-        localStorage.setItem("nomeUsuario", usuario.nome);
+
+        localStorage.setItem(
+            "nomeUsuario",
+            usuarioEncontrado.nome
+        );
+
+
+        localStorage.setItem(
+            "usuarioAtual",
+            JSON.stringify(usuarioEncontrado)
+        );
+
 
         alert("Login realizado com sucesso!");
 
+
         window.location.href = "index.html";
+
 
     } else {
 
