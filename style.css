@@ -930,3 +930,98 @@ footer {
     font-weight:bold;
 
 }
+/* ===========================
+   LOGIN
+=========================== */
+
+.login-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+
+.login-box {
+    background: white;
+    width: 380px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+
+.login-box h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #2563EB;
+}
+
+
+.login-box input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+
+.login-box input:focus {
+    border-color: #2563EB;
+}
+
+
+.login-box button {
+
+    width: 100%;
+    padding: 14px;
+
+    background: #2563EB;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.login-box button:hover {
+
+    background: #1D4ED8;
+
+}
+
+
+.login-box p {
+
+    margin-top: 20px;
+    font-size: 14px;
+
+}
+
+
+.login-box a {
+
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+
+.login-box a:hover {
+
+    text-decoration: underline;
+
+}

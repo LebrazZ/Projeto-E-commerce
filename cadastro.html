@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | TechStore</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>TechStore</h1>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="carrinho.html">Carrinho</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section class="formulario-pagamento">
+        <h2>Criar Conta 👤</h2>
+
+        <form id="formCadastro">
+
+
+            <input 
+            type="text"
+            id="nome"
+            placeholder="Nome completo"
+            required>
+
+            <input 
+            type="email"
+            id="email"
+            placeholder="E-mail"
+            required>
+
+            <input 
+            type="passaword"
+            id="senha"
+            placeholder="Senha"
+            required>
+
+            <button type="submit">
+                Cadastrar
+            </button>
+
+        </form>
+
+        <p>
+            Já possui conta?
+            <a href="login.html">Faça login</a>
+        </p>
+
+    </section>
+
+
+    <script src="cadastro.js"></script>
+    
+</body>
+</html>
