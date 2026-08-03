@@ -202,22 +202,22 @@ produtos.forEach(produto =>{
 
 });
 
-function atualizarContatorCarrinho(){
+function atualizarContadorCarrinho() {
 
-    const contator = document.getElementById("contadorCarrinho");
+    const contador = document.getElementById("contadorCarrinho");
 
-    if(!contador) return;
+    if (!contador) return;
 
     let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
     let quantidade = 0;
 
-    carrinho. forEach(produto => {
+    carrinho.forEach(produto => {
         quantidade += produto.quantidade;
     });
 
-    contator.textContent = quantidade;
+    contador.textContent = quantidade;
 
 }
 
-atualizarContatorCarrinho();
+atualizarContadorCarrinho();
