@@ -1333,3 +1333,321 @@ footer {
     font-weight:bold;
 
 }
+
+/* ===========================
+   MINHA CONTA / LOGIN
+=========================== */
+
+.conta-container {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.conta-card {
+    background: white;
+    width: 400px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.conta-card h1 {
+    color: #2563EB;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.conta-card p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+
+/* Inputs */
+
+.conta-card input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.conta-card input:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 5px rgba(37,99,235,0.3);
+}
+
+
+/* Botão */
+
+.btn-conta {
+    width: 100%;
+    padding: 14px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-conta:hover {
+    background: #1d4ed8;
+}
+
+
+/* Links */
+
+.conta-links {
+    margin-top: 20px;
+}
+
+.conta-links a {
+    color: #2563EB;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.conta-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===========================
+   ÁREA DO USUÁRIO LOGADO
+=========================== */
+
+.perfil-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.perfil-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.12);
+}
+
+
+.perfil-card h2 {
+    color:#2563EB;
+    margin-bottom:20px;
+}
+
+
+.info-usuario {
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+
+.info-box {
+    background:#f3f4f6;
+    padding:15px;
+    border-radius:10px;
+    font-size:16px;
+}
+
+
+.btn-sair {
+    margin-top:25px;
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.btn-sair:hover {
+    background:#dc2626;
+}
+
+/* ===========================
+   MINHA CONTA TECHSTORE
+=========================== */
+
+body {
+    background: #f3f4f6;
+}
+
+
+/* Container principal */
+
+.conta-container {
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+
+/* Card principal */
+
+.conta-card {
+    background: white;
+    width: 850px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+
+/* Título */
+
+.conta-card h1 {
+    color: #2563eb;
+    font-size: 30px;
+    margin-bottom: 30px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+
+
+/* Dados do usuário */
+
+.usuario-info {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-bottom:40px;
+}
+
+
+.usuario-box {
+    background:#f8fafc;
+    border-left:5px solid #2563eb;
+    padding:18px;
+    border-radius:12px;
+    font-size:16px;
+}
+
+
+.usuario-box strong {
+    color:#111827;
+}
+
+
+
+/* Histórico */
+
+.conta-card h2 {
+    color:#2563eb;
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+
+
+/* Pedidos */
+
+.pedido-card {
+
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.06);
+
+    transition:0.3s;
+}
+
+
+.pedido-card:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+
+.pedido-card h3 {
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+
+.pedido-card p {
+    margin:8px 0;
+    color:#374151;
+}
+
+
+.pedido-card ul {
+    margin:15px 0;
+    padding-left:20px;
+}
+
+
+.valor-total {
+
+    font-size:18px;
+    font-weight:bold;
+    color:#16a34a;
+
+}
+
+
+
+/* Botão sair */
+
+.btn-sair {
+
+    width:100%;
+    margin-top:30px;
+
+    padding:15px;
+
+    background:#ef4444;
+    color:white;
+
+    border:none;
+    border-radius:10px;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+.btn-sair:hover {
+
+    background:#dc2626;
+
+}
+
+
+
+/* Responsivo */
+
+@media(max-width:700px){
+
+.usuario-info{
+    grid-template-columns:1fr;
+}
+
+.conta-card{
+    width:100%;
+}
+
+}

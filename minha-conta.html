@@ -18,55 +18,92 @@
 
     <h1>TechStore</h1>
 
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="produtos.html">Produtos</a>
-        <a href="carrinho.html">Carrinho</a>
-        <a href="minha-conta.html">Minha Conta</a>
-    </nav>
-
 </header>
 
 
 
-<section class="minha-conta">
+<div class="conta-container">
 
-    <h2>Minha Conta 👤</h2>
+<div class="conta-card">
 
-    <div class="dados-usuario">
-
-        <p>
-            <strong>Nome:</strong>
-            <span id="nomeConta"></span>
-        </p>
-
-        <p>
-            <strong>E-mail:</strong>
-            <span id="emailConta"></span>
-        </p>
-
-    </div>
+<h1>
+👤 Minha Conta
+</h1>
 
 
-    <!-- Histórico de Pedidos -->
-    <section class="historico-pedidos">
+<div class="usuario-info">
 
-        <h2>📦 Histórico de Pedidos</h2>
-
-        <div id="listaPedidos">
-
-            <p>Você ainda não realizou nenhuma compra.</p>
-
-        </div>
-
-    </section>
+<div class="usuario-box">
+<strong>Nome</strong>
+<br>
+Letícia Braz
+</div>
 
 
-    <button onclick="sair()">
-        Sair da conta
-    </button>
+<div class="usuario-box">
+<strong>E-mail</strong>
+<br>
+lele@email.com
+</div>
 
-</section>
+
+</div>
+
+
+<h2>📦 Histórico de Pedidos</h2>
+
+
+<div class="pedido-card">
+
+<h3>Pedido #178586700782</h3>
+
+<p><b>Data:</b> 04/08/2026</p>
+
+<p><b>Pagamento:</b> Boleto</p>
+
+<ul>
+<li>iPhone 17 (1x)</li>
+</ul>
+
+
+<p class="valor-total">
+Total: R$ 6.999,90
+</p>
+
+
+</div>
+
+
+<div class="pedido-card">
+
+<h3>Pedido #1785864418350</h3>
+
+<p><b>Data:</b> 04/08/2026</p>
+
+<p><b>Pagamento:</b> Pix</p>
+
+<ul>
+<li>Headset Gamer (1x)</li>
+<li>iPhone 17 (1x)</li>
+</ul>
+
+
+<p class="valor-total">
+Total: R$ 7.399,80
+</p>
+
+
+</div>
+
+
+<button class="btn-sair">
+Sair da conta
+</button>
+
+
+</div>
+
+</div>
 
 
 
