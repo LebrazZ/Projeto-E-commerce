@@ -10,10 +10,15 @@ const total = document.getElementById("total");
 
 let valorTotal = 0;
 
-// Mostrar produtos
+
+// ===========================
+// CARREGAR RESUMO
+// ===========================
+
 function carregarResumo() {
 
     listaResumo.innerHTML = "";
+    valorTotal = 0;
 
     if (carrinho.length === 0) {
 
@@ -27,14 +32,26 @@ function carregarResumo() {
 
     carrinho.forEach(produto => {
 
-        valorTotal += produto.preco;
+        const valorProduto = produto.preco * produto.quantidade;
+
+        valorTotal += valorProduto;
 
         listaResumo.innerHTML += `
+
             <div class="produto-resumo">
-                <span>${produto.nome}</span>
-                <strong>R$ ${produto.preco.toFixed(2).replace(".", ",")}</strong>
+
+                <span>
+                    ${produto.nome} (${produto.quantidade}x)
+                </span>
+
+                <strong>
+                    R$ ${valorProduto.toFixed(2).replace(".", ",")}
+                </strong>
+
             </div>
+
         `;
+
     });
 
     subtotal.textContent =
@@ -42,9 +59,15 @@ function carregarResumo() {
 
     total.textContent =
         `R$ ${valorTotal.toFixed(2).replace(".", ",")}`;
+
 }
 
 carregarResumo();
+
+
+// ===========================
+// FINALIZAR PEDIDO
+// ===========================
 
 function finalizarPedido() {
 
@@ -53,14 +76,41 @@ function finalizarPedido() {
     const pagamento = document.getElementById("pagamento").value;
 
     if (nome === "" || email === "") {
+
         alert("Preencha todos os campos obrigatórios.");
+
         return;
     }
 
     if (carrinho.length === 0) {
+
         alert("Seu carrinho está vazio.");
+
         return;
     }
+
+    const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+
+    const novoPedido = {
+
+        id: Date.now(),
+        cliente: nome,
+        email: email,
+        pagamento: pagamento,
+        produtos: carrinho,
+        total: valorTotal,
+        data: new Date().toLocaleString("pt-BR")
+
+    };
+
+    pedidos.push(novoPedido);
+
+    localStorage.setItem(
+        "pedidos",
+        JSON.stringify(pedidos)
+    );
+
+    localStorage.removeItem("carrinho");
 
     alert(`Pedido realizado com sucesso!
 
@@ -72,7 +122,6 @@ Total: R$ ${valorTotal.toFixed(2).replace(".", ",")}
 
 Obrigado por comprar na TechStore!`);
 
-    localStorage.removeItem("carrinho");
-
     window.location.href = "index.html";
+
 }

@@ -29,24 +29,42 @@
 
 
 
-<section class="conta-container">
+<section class="minha-conta">
 
-    <div class="conta-box">
+    <h2>Minha Conta 👤</h2>
 
-        <h2>Minha Conta 👤</h2>
+    <div class="dados-usuario">
 
-        <p><strong>Nome:</strong> <span id="nomeConta"></span></p>
+        <p>
+            <strong>Nome:</strong>
+            <span id="nomeConta"></span>
+        </p>
 
-        <p><strong>E-mail:</strong> <span id="emailConta"></span></p>
-
-
-        <button onclick="sair()">
-            Sair da conta
-        </button>
-
+        <p>
+            <strong>E-mail:</strong>
+            <span id="emailConta"></span>
+        </p>
 
     </div>
 
+
+    <!-- Histórico de Pedidos -->
+    <section class="historico-pedidos">
+
+        <h2>📦 Histórico de Pedidos</h2>
+
+        <div id="listaPedidos">
+
+            <p>Você ainda não realizou nenhuma compra.</p>
+
+        </div>
+
+    </section>
+
+
+    <button onclick="sair()">
+        Sair da conta
+    </button>
 
 </section>
 

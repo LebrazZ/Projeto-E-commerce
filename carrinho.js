@@ -30,9 +30,21 @@ function mostrarCarrinho(){
             <h3>${produto.nome}</h3>
 
 
-            <p>
-            Quantidade: ${produto.quantidade}
-            </p>
+            <div class="quantidade">
+
+                <button onclick="diminuir(${index})">
+                    -
+                </button>
+
+                <span>
+                    ${produto.quantidade}
+                </span>
+
+                <button onclick="aumentar(${index})">
+                    +
+                </button>
+
+            </div>
 
 
             <p>
@@ -85,7 +97,49 @@ function remover(index){
 
 }
 
+function aumentar(index){
 
+    carrinho[index].quantidade++;
+
+    salvarCarrinho();
+
+    mostrarCarrinho();
+
+}
+
+
+
+function diminuir(index){
+
+    if(carrinho[index].quantidade > 1){
+
+        carrinho[index].quantidade--;
+
+    }else{
+
+        carrinho.splice(index,1);
+
+    }
+
+
+    salvarCarrinho();
+
+    mostrarCarrinho();
+
+}
+
+
+
+function salvarCarrinho(){
+
+    localStorage.setItem(
+        "carrinho",
+        JSON.stringify(carrinho)
+    );
+
+    atualizarContadorCarrinho();
+
+}
 
 function finalizarCompra(){
 

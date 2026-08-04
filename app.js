@@ -48,20 +48,36 @@ function criarEstrelas(quantidade){
 
 function adicionarCarrinho(id){
 
-    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    let carrinho = JSON.parse(
+        localStorage.getItem("carrinho")
+    ) || [];
 
 
-    let produto = produtos.find(item => item.id === id);
+    let produto = produtos.find(
+        item => item.id === id
+    );
 
 
-    let existe = carrinho.find(item => item.id === id);
+    if(!produto){
+
+        alert("Produto não encontrado!");
+
+        return;
+    }
+
+
+    let existe = carrinho.find(
+        item => item.id === id
+    );
 
 
     if(existe){
 
-        existe.quantidade++;
+        existe.quantidade += 1;
 
-    }else{
+
+    } else {
+
 
         carrinho.push({
 
@@ -69,7 +85,7 @@ function adicionarCarrinho(id){
             nome: produto.nome,
             preco: produto.preco,
             imagem: produto.imagem,
-            quantidade:1
+            quantidade: 1
 
         });
 
@@ -81,13 +97,13 @@ function adicionarCarrinho(id){
         JSON.stringify(carrinho)
     );
 
-    atualizarContatorCarrinho();
+
+    atualizarContadorCarrinho();
+
 
     alert("Produto adicionado ao carrinho 🛒");
 
 }
-
-
 
 
 // ===============================
@@ -132,8 +148,6 @@ function adicionarFavorito(id){
     }
 
 }
-
-
 
 
 // ===============================
@@ -238,20 +252,39 @@ function verificarUsuario(){
     if(logado === "true"){
 
         areaUsuario.innerHTML = `
+
             <span>Olá, ${nome} 👋</span>
-            <button onclick="sair()">Sair</button>
+
+            <a href="minha-conta.html">
+                Minha Conta
+            </a>
+
+            <button onclick="sair()">
+                Sair
+            </button>
+
         `;
+
 
     } else {
 
+
         areaUsuario.innerHTML = `
-            <a href="login.html">Login</a>
-            <a href="cadastro.html">Cadastrar</a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="cadastro.html">
+                Cadastrar
+            </a>
+
         `;
 
     }
 
 }
+
 
 
 function sair(){
@@ -262,7 +295,7 @@ function sair(){
 
     alert("Você saiu da conta!");
 
-    window.location.href = "index.html";
+    window.location.reload();
 
 }
 

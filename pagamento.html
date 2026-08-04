@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Pagamento | TechStore</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
-
 
 <header class="header">
 
@@ -56,10 +51,7 @@
 
 </header>
 
-
-
 <section class="produtos">
-
 
 <div class="titulo-secao">
 
@@ -73,68 +65,32 @@ Preencha seus dados e escolha a melhor forma de pagamento.
 
 </div>
 
-
-
 <div class="checkout-container">
-
-
 
 <div class="resumo-pedido">
 
+    <p>Produtos selecionados:</p>
 
-<p>Produtos selecionados:</p>
+    <div id="listaResumo"></div>
 
-<div id="listaResumo"></div>
+    <div class="linha-resumo">
+        <span>Subtotal</span>
+        <strong id="subtotal">R$ 0,00</strong>
+    </div>
 
-<div class="linha-resumo">
-    <span>Subtotal</span>
-    <strong id="Subtotal">R$ 0,00</strong>
-</div>
+    <div class="linha-resumo">
+        <span>Frete</span>
+        <strong>Grátis</strong>
+    </div>
 
-<div class="linha-resumo">
-    <span>Frete</span>
-    <strong>Grátis</strong>
-</div>
-
-<div id="linha-resumo total">
-    <span>Total</span>
-    <strong id="total">R$ 0,00</strong>
-</div>
-
-<div class="linha-resumo">
-
-<span>
-Frete
-</span>
-
-<strong>
-Grátis
-</strong>
+    <div class="linha-resumo total">
+        <span>Total</span>
+        <strong id="total">R$ 0,00</strong>
+    </div>
 
 </div>
-
-
-<div class="linha-resumo total">
-
-<span>
-Total
-</span>
-
-<strong>
-R$ 0,00
-</strong>
-
-</div>
-
-
-</div>
-
-
-
-
 
 <div class="formulario-pagamento">
-
 
 <h3>
 👤 Dados do comprador
@@ -150,10 +106,6 @@ type="text"
 id="nome" 
 placeholder="Digite seu nome">
 
-
-
-
-
 <label>
 Email
 </label>
@@ -163,10 +115,6 @@ type="email"
 id="email" 
 placeholder="Digite seu email">
 
-
-
-
-
 <label>
 Endereço de entrega
 </label>
@@ -175,37 +123,25 @@ Endereço de entrega
 type="text" 
 placeholder="Rua, número, bairro">
 
-
-
-
-
 <label>
 Forma de pagamento
 </label>
 
-
 <select id="pagamento">
-
 
 <option>
 Pix
 </option>
 
-
 <option>
 Cartão de Crédito
 </option>
-
 
 <option>
 Boleto
 </option>
 
-
 </select>
-
-
-
 
 <button onclick="finalizarPedido()" class="comprar">
 
@@ -213,14 +149,9 @@ Confirmar pedido ✅
 
 </button>
 
-
 </div>
 
-
-
 </div>
-
-
 
 <div class="seguranca">
 
