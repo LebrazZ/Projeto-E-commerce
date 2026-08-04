@@ -127,21 +127,92 @@ placeholder="Rua, número, bairro">
 Forma de pagamento
 </label>
 
-<select id="pagamento">
+<div id="opcoesPagamento">
 
-<option>
-Pix
-</option>
+    <!-- PIX -->
+    <div id="pixBox" class="pagamento-box">
 
-<option>
-Cartão de Crédito
-</option>
+        <h4>Pagamento via Pix</h4>
 
-<option>
-Boleto
-</option>
+        <div id="qrcode" class="qrcode"></div>
 
-</select>
+        <input
+        type="text"
+        readonly
+        id="codigoPix"
+        value="00020126580014BR.GOV.BCB.PIX0136TECHSTORE1234567895204000053039865802BR5914TECHSTORE6009CURITIBA62070503***6304ABCD">
+
+        <button onclick="copiarPix()">
+            Copiar código Pix
+        </button>
+
+    </div>
+
+    <!-- CARTÃO -->
+
+<div id="cartaoBox" class="pagamento-box">
+
+    <input
+    type="text"
+    id="numeroCartao"
+    maxlength="19"
+    placeholder="0000 0000 0000 0000">
+
+    <input
+    type="text"
+    id="nomeCartao"
+    placeholder="Nome impresso no cartão">
+
+    <div class="linha-cartao">
+
+        <input
+        type="text"
+        id="validade"
+        maxlength="5"
+        placeholder="MM/AA">
+
+        <input
+        type="password"
+        id="cvv"
+        maxlength="3"
+        placeholder="CVV">
+
+    </div>
+
+    <label>Parcelamento</label>
+
+    <select id="parcelas">
+
+    </select>
+
+</div>
+
+    <!-- BOLETO -->
+
+    <div id="boletoBox" class="pagamento-box">
+
+        <h4>Boleto Bancário</h4>
+
+        <p>
+
+        Vencimento:
+        <strong id="vencimento"></strong>
+
+        </p>
+
+        <textarea readonly>
+
+34191.79001
+01043.510047
+91020.150008
+8
+97120000049990
+
+        </textarea>
+
+    </div>
+
+</div>
 
 <button onclick="finalizarPedido()" class="comprar">
 
@@ -159,12 +230,9 @@ Confirmar pedido ✅
 
 </div>
 
-
-
 </section>
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="pagamento.js"></script>
 <script src="contador.js"></script>
 

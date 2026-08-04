@@ -70,12 +70,38 @@ function mostrarCarrinho(){
     });
 
 
-    totalCompra.innerHTML =
-    `
-    Total: R$ ${total.toLocaleString("pt-BR",{
-        minimumFractionDigits:2
-    })}
-    `;
+const valorDesconto = total * desconto;
+
+const totalFinal = total - valorDesconto;
+
+totalCompra.innerHTML = `
+
+    <p>
+        Subtotal:
+        <strong>
+            R$ ${total.toLocaleString("pt-BR",{
+                minimumFractionDigits:2
+            })}
+        </strong>
+    </p>
+
+    <p>
+        Desconto:
+        <strong style="color:#16a34a;">
+            - R$ ${valorDesconto.toLocaleString("pt-BR",{
+                minimumFractionDigits:2
+            })}
+        </strong>
+    </p>
+
+    <h2>
+        Total:
+        R$ ${totalFinal.toLocaleString("pt-BR",{
+            minimumFractionDigits:2
+        })}
+    </h2>
+
+`;
 
 
 }
@@ -147,6 +173,46 @@ function finalizarCompra(){
 
 }
 
+let desconto = 0;
 
+function aplicarCupom(){
+
+    const cupom = document
+        .getElementById("cupom")
+        .value
+        .trim()
+        .toUpperCase();
+
+    const mensagem =
+        document.getElementById("mensagemCupom");
+
+    if(cupom === "TECH10"){
+
+        desconto = 0.10;
+
+        mensagem.innerHTML =
+            "✅ Cupom aplicado! 10% de desconto.";
+
+    }else if(cupom === "BEMVINDO20"){
+
+        desconto = 0.20;
+
+        mensagem.innerHTML =
+            "✅ Cupom aplicado! 20% de desconto.";
+
+    }else{
+
+        desconto = 0;
+
+        mensagem.innerHTML =
+            "❌ Cupom inválido.";
+
+    }
+
+    localStorage.setItem("desconto", desconto);
+
+    mostrarCarrinho();
+
+}
 
 mostrarCarrinho();
