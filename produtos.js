@@ -5,7 +5,8 @@ const produtos = [
         preco: 5499.90,
         imagem: "img/notebook.png",
         avaliacao: 5,
-        promocao: true
+        promocao: true,
+        categoria: "Notebook"
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ const produtos = [
         preco: 6999.90,
         imagem: "img/iphone.png",
         avaliacao: 5,
-        promocao: false
+        promocao: false,
+        categoria: "Smartphone"
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ const produtos = [
         preco: 399.90,
         imagem: "img/headset.png",
         avaliacao: 4,
-        promocao: true
+        promocao: true,
+        categoria: "Áudio"
     },
     {
         id: 4,
@@ -29,7 +32,8 @@ const produtos = [
         preco: 1499.90,
         imagem: "img/monitor.png",
         avaliacao: 5,
-        promocao: false
+        promocao: false,
+        categoria: "Monitor"
     }
 ];
 
@@ -156,51 +160,83 @@ function mostrarProdutos(produtosMostrar){
         <div class="card">
 
 
-            ${produto.promocao ? 
-            '<span class="badge">Oferta</span>' : ''}
+    ${produto.promocao ? 
+    '<span class="badge">🔥 Oferta</span>' : ''}
 
 
-            <img src="${produto.imagem}" 
-            alt="${produto.nome}">
+    <img src="${produto.imagem}" 
+    alt="${produto.nome}">
 
 
-            <h3>${produto.nome}</h3>
+    <h3>
+        ${produto.nome}
+    </h3>
 
 
-            <div class="avaliacao">
-
-                ${criarEstrelas(produto.avaliacao)}
-
-            </div>
-
-
-            <p class="preco">
-
-                R$ ${produto.preco.toLocaleString("pt-BR", {
-                    minimumFractionDigits:2
-                })}
-
-            </p>
+    <div class="avaliacao">
+        ${criarEstrelas(produto.avaliacao)}
+    </div>
 
 
 
-            <button 
-            class="comprar"
-            onclick="adicionarCarrinho(${produto.id})">
+    ${produto.promocao ? 
 
-            Comprar 🛒
+    `<p class="preco-antigo">
+        R$ ${(produto.preco * 1.15)
+        .toLocaleString("pt-BR",{
+            minimumFractionDigits:2
+        })}
+    </p>`
 
-            </button>
+    : ''}
 
-            <button 
-            class="favorito"
-            onclick="adicionarFavorito(${produto.id})">
 
-            ❤️
 
-            </button>
+    <p class="preco">
 
-        </div>
+        R$ ${produto.preco.toLocaleString("pt-BR", {
+            minimumFractionDigits:2
+        })}
+
+    </p>
+
+
+    <p class="parcelamento">
+        Em até 12x sem juros
+    </p>
+
+
+
+    <button 
+    class="comprar"
+    onclick="adicionarCarrinho(${produto.id})">
+
+        🛒 Adicionar ao carrinho
+
+    </button>
+
+
+
+    <button 
+    class="detalhes"
+    onclick="verProduto(${produto.id})">
+
+        Ver detalhes
+
+    </button>
+
+
+
+    <button 
+    class="favorito"
+    onclick="adicionarFavorito(${produto.id})">
+
+        ❤️
+
+    </button>
+
+
+</div>
 
         `;
 
@@ -236,3 +272,10 @@ pesquisa.addEventListener("input", function(){
 
 
 });
+
+function verProduto(id){
+
+    window.location.href = 
+    `produto.html?id=${id}`;
+
+}

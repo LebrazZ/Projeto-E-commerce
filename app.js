@@ -427,3 +427,78 @@ function carregarProdutosHome(){
 
 
 carregarProdutosHome();
+
+// ===========================
+// OFERTAS DA SEMANA
+// ===========================
+
+const listaOfertas = document.getElementById("listaOfertas");
+
+
+function carregarOfertas(){
+
+    if(!listaOfertas) return;
+
+
+    const ofertas = produtos.slice(0,3);
+
+
+    listaOfertas.innerHTML = "";
+
+
+    ofertas.forEach(produto => {
+
+
+        let precoAntigo = produto.preco * 1.15;
+
+
+        listaOfertas.innerHTML += `
+
+        <div class="oferta-card">
+
+
+            <span class="desconto">
+                15% OFF
+            </span>
+
+
+            <img src="${produto.imagem}" 
+            alt="${produto.nome}">
+
+
+            <h3>
+                ${produto.nome}
+            </h3>
+
+
+            <p class="preco-antigo">
+                R$ ${precoAntigo.toLocaleString('pt-BR',{
+                    minimumFractionDigits:2
+                })}
+            </p>
+
+
+            <p class="preco-oferta">
+                R$ ${produto.preco.toLocaleString('pt-BR',{
+                    minimumFractionDigits:2
+                })}
+            </p>
+
+
+            <button onclick="adicionarCarrinho(${produto.id})">
+                Aproveitar oferta
+            </button>
+
+
+        </div>
+
+        `;
+
+
+    });
+
+
+}
+
+
+carregarOfertas();
