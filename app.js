@@ -33,14 +33,70 @@ const produtos = [
 const listaProdutos = document.getElementById("listaProdutos");
 
 
+function carregarProdutosHome(){
 
-function criarEstrelas(quantidade){
+    if(!listaProdutos) return;
 
-    return "⭐".repeat(quantidade);
+
+    listaProdutos.innerHTML = "";
+
+
+    produtos.forEach(produto => {
+
+
+        listaProdutos.innerHTML += `
+
+        <div class="produto-card">
+
+
+            <div class="produto-imagem">
+
+                <img src="${produto.imagem}" alt="${produto.nome}">
+
+            </div>
+
+
+            <span class="oferta">
+                🔥 Oferta
+            </span>
+
+
+            <div class="estrelas">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+
+            <h3>
+                ${produto.nome}
+            </h3>
+
+
+            <p class="preco">
+                R$ ${produto.preco.toLocaleString('pt-BR', {
+                    minimumFractionDigits:2
+                })}
+            </p>
+
+
+            <p class="parcelamento">
+                ou em até 12x sem juros
+            </p>
+
+
+            <button onclick="adicionarCarrinho(${produto.id})">
+                Adicionar ao carrinho
+            </button>
+
+
+        </div>
+
+        `;
+
+    });
 
 }
 
-
+carregarProdutosHome();
 
 // ===============================
 // CARRINHO
@@ -301,3 +357,73 @@ function sair(){
 
 
 verificarUsuario();
+
+// ===========================
+// PRODUTOS NA HOME
+// ===========================
+
+const listaProdutos = document.getElementById("listaProdutos");
+
+
+function carregarProdutosHome(){
+
+    if(!listaProdutos) return;
+
+
+    listaProdutos.innerHTML = "";
+
+
+    produtos.forEach(produto => {
+
+        listaProdutos.innerHTML += `
+
+        <div class="produto-card">
+
+
+            <div class="produto-imagem">
+                <img src="${produto.imagem}" alt="${produto.nome}">
+            </div>
+
+
+            <span class="oferta">
+                🔥 Oferta
+            </span>
+
+
+            <div class="estrelas">
+                ${"⭐".repeat(produto.avaliacao || 5)}
+            </div>
+
+
+            <h3>
+                ${produto.nome}
+            </h3>
+
+
+            <p class="preco">
+                R$ ${produto.preco.toLocaleString('pt-BR', {
+                    minimumFractionDigits:2
+                })}
+            </p>
+
+
+            <p class="parcelamento">
+                Em até 12x sem juros
+            </p>
+
+
+            <button onclick="adicionarCarrinho(${produto.id})">
+                Adicionar ao carrinho
+            </button>
+
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+carregarProdutosHome();

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,86 +8,74 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
-    
+
     <header class="header">
 
-    <div class="logo">
-        <a href="index.html">TechStore</a>
-    </div>
+        <div class="logo">
+            <a href="index.html">TechStore</a>
+        </div>
 
-    <div class="search-box">
+        <div class="search-box">
 
-        <input
-            type="text"
-            placeholder="Pesquisar produtos..."
-        >
+            <input type="text" placeholder="Pesquisar produtos...">
 
-        <button>
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
 
-    </div>
+        </div>
 
-    <nav class="menu">
+        <nav class="menu">
 
-        <ul>
+            <ul>
 
-            <li>
-                <a href="index.html">Início</a>
-            </li>
+                <li><a href="index.html">Início</a></li>
 
-            <li>
-                <a href="produtos.html">Produtos</a>
-            </li>
+                <li><a href="produtos.html">Produtos</a></li>
 
-            <li>
-                <a href="promocoes.html">Promoções</a>
-            </li>
+                <li><a href="promocoes.html">Promoções</a></li>
 
-            <li>
-                <a href="contato.html">Contato</a>
-            </li>
+                <li><a href="contato.html">Contato</a></li>
 
-            <div id="areaUsuario"></div>
+                <div id="areaUsuario"></div>
 
-        </ul>
+            </ul>
 
-    </nav>
+        </nav>
 
-    <div class="acoes">
+        <div class="acoes">
 
-        <a href="favoritos.html" title="Favoritos">
+            <a href="favoritos.html" title="Favoritos">
+                <i class="fa-regular fa-heart"></i>
+            </a>
 
-            <i class="fa-regular fa-heart"></i>
+            <a href="carrinho.html" class="carrinho" title="Carrinho">
 
-        </a>
+                <i class="fa-solid fa-cart-shopping"></i>
 
-        <a href="carrinho.html" class="carrinho" title="Carrinho">
+                <span id="contadorCarrinho">0</span>
 
-            <i class="fa-solid fa-cart-shopping"></i>
+            </a>
 
-            <span id="contadorCarrinho">0</span>
+            <a href="login.html" title="Login">
+                <i class="fa-regular fa-user"></i>
+            </a>
 
-        </a>
+        </div>
 
-        <a href="login.html" title="Login">
+    </header>
 
-            <i class="fa-regular fa-user"></i>
-
-        </a>
-
-    </div>
-
-</header> 
-    
     <section class="banner">
 
         <div class="banner-text">
@@ -97,7 +86,7 @@
 
             <p>
                 Encontre notebooks, smartphones, acessórios e muito mais
-                com qualidades, garantia e os melhores preços.
+                com qualidade, garantia e os melhores preços.
             </p>
 
             <a href="produtos.html" class="btn-banner">
@@ -106,53 +95,196 @@
 
         </div>
 
-         <div class="hero-image">
-            <img src="img/notebook.png">
+        <div class="hero-image">
+            <img src="img/notebook.png" alt="Notebook">
         </div>
 
     </section>
 
     <section class="categorias">
 
-        <h2>Comprar por categoria</h2>
+    <h2>Comprar por categoria</h2>
 
-        <div class="cards-categorias">
+    <section class="categorias">
 
-            <div class="categoria">
-                💻
-                <h3>Notebooks</h3>
-            </div>
+    <h2>Comprar por categoria</h2>
 
-            <div class="categoria">
-                📱
-                <h3>Smartphones</h3>
-            </div>
+    <p class="subtitulo-categoria">
+        Encontre os melhores produtos de tecnologia para você
+    </p>
 
-            <div class="categoria">
-                🎮
-                <h3>Gamer</h3>
-            </div>
+
+    <div class="categorias-container">
+
+
+        <div class="categoria-card">
+            <i>💻</i>
+            <h3>Notebooks</h3>
+            <p>Desempenho para trabalho, estudo e jogos</p>
+            <button>Ver produtos</button>
+        </div>
+
+
+
+        <div class="categoria-card">
+            <i>📱</i>
+            <h3>Smartphones</h3>
+            <p>Os celulares mais modernos do mercado</p>
+            <button>Ver produtos</button>
+        </div>
+
+
+
+        <div class="categoria-card">
+            <i>🎮</i>
+            <h3>Gamer</h3>
+            <p>Equipamentos para elevar sua experiência</p>
+            <button>Ver produtos</button>
+        </div>
+
+
+
+        <div class="categoria-card">
+            <i>🎧</i>
+            <h3>Áudio</h3>
+            <p>Fones e acessórios de alta qualidade</p>
+            <button>Ver produtos</button>
+        </div>
+
+
+
+        <div class="categoria-card">
+            <i>⌚</i>
+            <h3>Smartwatches</h3>
+            <p>Tecnologia no seu pulso</p>
+            <button>Ver produtos</button>
+        </div>
+
+
+
+        <div class="categoria-card">
+            <i>🖥️</i>
+            <h3>Monitores</h3>
+            <p>Imagem, qualidade e desempenho</p>
+            <button>Ver produtos</button>
+        </div>
+
+
+    </div>
+
+    <section class="produtos-destaque">
+
+        <h2>Produtos em destaque</h2>
+
+        <p class="subtitulo-produtos">
+            Confira os produtos mais vendidos da TechStore
+        </p>
+
+
+        <div id="listaProdutos" class="produtos-container">
 
         </div>
 
     </section>
 
-    <section class="produtos">
+</section>
 
-        <div class="titulo-secao">
-            <h2>Produtos em Destaque</h2>
-            <p>Confira os produtos mais vendidos da TechStore</p>
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-col">
+
+                <h3>TechStore</h3>
+
+                <p>
+                    Tecnologia ao seu alcance.
+                    Os melhores notebooks, smartphones e acessórios
+                    com qualidade, segurança e garantia.
+                </p>
+
+                <div class="redes">
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                    <a href="#"><i class="fab fa-github"></i></a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h3>Institucional</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Início</a></li>
+
+                    <li><a href="produtos.html">Produtos</a></li>
+
+                    <li><a href="promocoes.html">Promoções</a></li>
+
+                    <li><a href="contato.html">Contato</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h3>Minha Conta</h3>
+
+                <ul>
+
+                    <li><a href="login.html">Entrar</a></li>
+
+                    <li><a href="minha-conta.html">Minha Conta</a></li>
+
+                    <li><a href="favoritos.html">Favoritos</a></li>
+
+                    <li><a href="carrinho.html">Carrinho</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h3>Atendimento</h3>
+
+                <ul>
+
+                    <li>📞 (41) 99999-9999</li>
+
+                    <li>✉ contato@techstore.com</li>
+
+                    <li>📍 Curitiba - PR</li>
+
+                </ul>
+
+            </div>
+
         </div>
 
-        <div class="lista-produtos" id="listaProdutos">
+        <div class="footer-bottom">
+
+            © 2026 TechStore - Todos os direitos reservados.
 
         </div>
 
-    </section>
+    </footer>
 
     <script src="app.js"></script>
     <script src="usuario.js"></script>
     <script src="contador.js"></script>
 
 </body>
+
 </html>

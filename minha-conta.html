@@ -10,17 +10,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-
 
 <header>
 
     <h1>TechStore</h1>
 
 </header>
-
-
 
 <div class="conta-container">
 
@@ -30,28 +26,33 @@
 👤 Minha Conta
 </h1>
 
-
 <div class="usuario-info">
 
-<div class="usuario-box">
+<<div class="usuario-box">
+
 <strong>Nome</strong>
-<br>
-Letícia Braz
-</div>
 
+<br>
+
+<span id="nomeUsuario">
+Carregando...
+</span>
+
+</div>
 
 <div class="usuario-box">
+
 <strong>E-mail</strong>
+
 <br>
-lele@email.com
+
+<span id="emailUsuario">
+Carregando...
+</span>
+
 </div>
-
-
-</div>
-
 
 <h2>📦 Histórico de Pedidos</h2>
-
 
 <div class="pedido-card">
 
@@ -65,14 +66,11 @@ lele@email.com
 <li>iPhone 17 (1x)</li>
 </ul>
 
-
 <p class="valor-total">
 Total: R$ 6.999,90
 </p>
 
-
 </div>
-
 
 <div class="pedido-card">
 
@@ -87,28 +85,21 @@ Total: R$ 6.999,90
 <li>iPhone 17 (1x)</li>
 </ul>
 
-
 <p class="valor-total">
 Total: R$ 7.399,80
 </p>
 
-
 </div>
 
-
-<button class="btn-sair">
+<button class="btn-sair" onclick="sair()">
 Sair da conta
 </button>
 
-
 </div>
 
 </div>
-
-
 
 <script src="conta.js"></script>
-
 
 </body>
 

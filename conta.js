@@ -1,22 +1,60 @@
-let usuario = JSON.parse(
-    localStorage.getItem("usuarioAtual")
-);
+// ===========================
+// MINHA CONTA - TECHSTORE
+// ===========================
 
 
-if(usuario){
+function carregarConta(){
 
-    document.getElementById("nomeConta").textContent = usuario.nome;
+    let usuario = JSON.parse(
+        localStorage.getItem("usuarioAtual")
+    );
 
-    document.getElementById("emailConta").textContent = usuario.email;
+
+    let logado = localStorage.getItem("logado");
 
 
-} else {
+    if(!usuario || logado !== "true"){
 
-    alert("Você precisa estar logado!");
+        alert("Você precisa estar logado!");
 
-    window.location.href = "login.html";
+        window.location.href = "login.html";
+
+        return;
+
+    }
+
+
+    document.getElementById("nomeUsuario").innerHTML =
+    usuario.nome;
+
+
+    document.getElementById("emailUsuario").innerHTML =
+    usuario.email;
 
 }
+
+
+
+
+function sair(){
+
+    localStorage.removeItem("logado");
+
+    localStorage.removeItem("usuarioAtual");
+
+    localStorage.removeItem("nomeUsuario");
+
+
+    alert("Você saiu da conta!");
+
+
+    window.location.href="index.html";
+
+}
+
+
+
+carregarConta();
 
 const pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
 
